@@ -1,5 +1,3 @@
-# build a tic tac to game
-
 class TicTacToe:
     def __init__(self):
         self.board = [''] * 9
