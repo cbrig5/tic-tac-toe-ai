@@ -1,1 +1,1 @@
-# tic-tqc-toe-ai
+# tic-tac-toe-ai
