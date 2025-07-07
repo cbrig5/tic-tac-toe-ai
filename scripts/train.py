@@ -39,11 +39,11 @@ if existing_models:
     if choice.isdigit() and int(choice) < len(existing_models):
         with open(os.path.join(model_dir, existing_models[int(choice)]), "rb") as f:
             q_values = pickle.load(f)
-        print(f"✅ Loaded model: {existing_models[int(choice)]}")
+        print(f"Loaded model: {existing_models[int(choice)]}")
     else:
-        print("⚠️ Invalid choice. Training new agent.")
+        print("Invalid choice. Training new agent.")
 else:
-    print("📦 No models found. Training new agent...")
+    print("No models found. Training new agent...")
 
 # === Agent ===
 agent = TicTacToeAgent(
@@ -83,8 +83,8 @@ timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 model_path = os.path.join(model_dir, f"q_table_{timestamp}.pkl")
 with open(model_path, "wb") as f:
     pickle.dump(agent.q_values, f)
-print(f"\n📁 Saved model: {model_path}")
-print(f"📊 Wins: {wins}, Losses: {losses}, Draws: {draws}")
+print(f"\nSaved model: {model_path}")
+print(f"Wins: {wins}, Losses: {losses}, Draws: {draws}")
 
 # === Plotting ===
 def get_moving_avgs(arr, window, mode):
